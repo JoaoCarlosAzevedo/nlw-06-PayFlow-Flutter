@@ -15,40 +15,40 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final topContainerHeight = size.height * 0.35;
+
     return Scaffold(
       backgroundColor: AppColors.background,
       body: Container(
-        height: size.height,
-        width: size.width,
+        height: double.infinity,
+        width: double.infinity,
         child: Stack(
           children: [
             Container(
-              width: size.width,
-              height: size.height * 0.36,
               color: AppColors.primary,
+              width: double.infinity,
+              height: topContainerHeight,
             ),
             Positioned(
-              top: size.height * 0.1,
-              left: 0,
-              right: 0,
-              child: Image.asset(
-                AppImages.person,
-                width: 208,
-                height: 300,
-              ),
-            ),
-            Positioned(
-              bottom: size.height * 0.22,
+              top: topContainerHeight / 5,
               left: 0,
               right: 0,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Image.asset(AppImages.logomini),
+                  Image.asset(
+                    AppImages.person,
+                    width: 208,
+                    height: 300,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20),
+                    child: Image.asset(AppImages.logomini),
+                  ),
                   Padding(
                     padding:
-                        const EdgeInsets.only(top: 30, left: 70, right: 70),
+                        const EdgeInsets.only(left: 70, right: 70, top: 20),
                     child: Text(
                       "Organize seus boletos em um só lugar",
                       textAlign: TextAlign.center,
@@ -56,17 +56,16 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   Padding(
-                    padding:
-                        const EdgeInsets.only(top: 40, left: 40, right: 40),
+                    padding: EdgeInsets.all(40),
                     child: SocialLoginButton(
                       onTap: () {
-                        print("aloo");
+                        print("TODO emilioheinz: call google login method");
                       },
                     ),
                   )
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
