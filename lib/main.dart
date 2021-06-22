@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:payflow/modules/spalsh/splash_page.dart';
+import 'package:payflow/modules/splash/splash_page.dart';
 import 'package:payflow/shared/themes/app_colors.dart';
 
 void main() {
